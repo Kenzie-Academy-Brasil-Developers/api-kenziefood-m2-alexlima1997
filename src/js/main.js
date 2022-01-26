@@ -23,11 +23,7 @@ const Main = class Main{
 
         await fetch("https://kenzie-food-api.herokuapp.com/product")
         .then(response => response.json())
-        .then(data => {
-            
-            this._products = data;
-            console.log(this._products)
-        })
+        .then(data => this._products = data)
  
     }
 
@@ -50,9 +46,12 @@ const Main = class Main{
         return(string)
     }
 
-    searchAction(data){
-        let context = document.getElementsByClassName('search-txt')[0].value
-        this._filteredProducts = SearchController.filter(data, context)
+    searchName(data, context){
+        this._filteredProducts = SearchController.filterName(data, context)
+    }
+
+    searchType(data, context){
+        this._filteredProducts = SearchController.filterType(data, context)
     }
 
     productsDom(data){
