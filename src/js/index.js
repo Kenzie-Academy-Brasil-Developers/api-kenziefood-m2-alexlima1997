@@ -1,31 +1,67 @@
-const slides = document.querySelectorAll(".slide")
-const carrosel = document.getElementById("carrosel")
-const left = document.getElementById("left")
-const right = document.getElementById("right")
+import {Main} from './main.js';
 
-const SLIDES_COUNT = slides.length
+let button             = document.getElementsByClassName('search-btn')[0]
+let buttonTodos        = document.getElementById('todos')
+let buttonPanificadora = document.getElementById('panificadora')
+let buttonFrutas       = document.getElementById('frutas')
+let buttonBebidas      = document.getElementById('bebidas')
+let contextInput       = document.getElementsByClassName('search-txt')[0]
 
-let current_slide = 0
+let main = new Main();
 
-left.addEventListener("click", ()=>{
-    current_slide--
-    if(current_slide < 0){
-        current_slide = SLIDES_COUNT -1
-    }
-    updateCarrosel()
-})
-
-right.addEventListener("click", () =>{
-    current_slide++
-    if(current_slide > SLIDES_COUNT -1){
-        current_slide = 0
-    }
-    updateCarrosel()
-})
-
-function updateCarrosel(){
-    carrosel.style.transform = `translateX(${
-        -current_slide * slides[0].offsetWidth
-    }px)`
-    document.body.style.background = `#${slides[current_slide].getAttribute("data-bg")}`
+async function productsRequest(){
+    
+    await main.getProducts();
+    eventsButtons();
+    main.productsDom(main.products);
+    
 }
+
+function search (){
+    main.searchName(main._products, contextInput.value)
+    main.productsDom(main._filteredProducts)
+}
+
+function searchButton(evt){
+    let target = evt.target
+    let value = target.innerText
+    if(value == 'Todos'){
+        this._input = "";
+        main.searchType(main._products, this._input)
+        main.productsDom(main._filteredProducts)
+    }    
+}
+
+function searchPanificadora(){
+    this._input = "Panificadora";
+    main.searchType(main._products, this._input)
+    main.productsDom(main._filteredProducts)
+}
+
+function searchFrutas(){
+    this._input = "Frutas";
+    main.searchType(main._products, this._input)
+    main.productsDom(main._filteredProducts)
+}
+
+function searchBebidas(){
+    this._input = "Bebidas";
+    main.searchType(main._products, this._input)
+    main.productsDom(main._filteredProducts)
+}
+
+function activeSearch(){
+    main.searchName(main._products, contextInput.value)
+    main.productsDom(main._filteredProducts)
+}
+
+function eventsButtons(){
+    
+    button.addEventListener('click', search)
+    buttonTodos.addEventListener('click', searchButton)
+    buttonPanificadora.addEventListener('click', searchPanificadora)
+    buttonFrutas.addEventListener('click', searchFrutas)
+    buttonBebidas.addEventListener('click', searchBebidas)
+    contextInput.addEventListener('keyup', activeSearch)
+}
+productsRequest();
