@@ -9,7 +9,7 @@
 }
 
 body{
-    width: 375px;
+    /* width: 375px; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -88,162 +88,30 @@ header img{
     color: var(--color-primary);
 }
 
-.carrosel-conteiner{
-    overflow: hidden;
-    position: relative;
-    height: 72px;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.carrosel{
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translateX(0);
-    transition: transform 0.4s ease-in-out;
-}
-
-.slide{
-    width: 100%;
-    text-align: center;
-}
-
-.arrow{
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 20%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    opacity: 0.8;
-}
-
-.left-arrow{
-    left: 2rem;
-}
-
-.right-arrow{
-    right: 2rem;
-}
 
 
-
-
-
-
- 
 ul{
-    display: flex;
-    margin: 15px;
-    width: 986px;
-}
-
-ul li{
-    background: blue;
-    border-radius: 40px;
-    list-style: none;
-    margin-right: 28px;
-    padding: 5px 10px;
-    border: 2px solid transparent;
-}
-li{
-    background: blue;
-    border-radius: 40px;
-    list-style: none;
-    margin-right: 28px;
-    padding: 5px 10px;
-    border: 2px solid transparent;
-}
-
-.todos{
-    background: var(--grey-1);
-}
-
-.todos:hover{
-    border: 2px solid var(--grey-4);
-    cursor: pointer;
-}
-
-.panificadora{
-    background: var(--product-2);
-}
-
-.panificadora:hover{
-    border: 2px solid var(--grey-4);
-    background: var(--grey-1);
-    cursor: pointer;
-}
-
-.frutas{
-    background: var(--product-3);
-}
-
-.frutas:hover{
-    border: 2px solid var(--grey-4);
-    background: var(--grey-1);
-    cursor: pointer;
-}
-
-.bebidas{
-    background: var(--product-4);
-}
-
-.bebidas:hover{
-    border: 2px solid var(--grey-4);
-    background: var(--grey-1);
-    cursor: pointer;
-}
-
-/* header{
-    width: 100vw;
-    position: absolute;
-    background-color: #fff;
-}
-
-header section{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 27px 17px;
-    padding-right: 15px;
-}
-
-header section img{
-    width: 123px;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15.48px;
-}
-
-
-
-
-main{
-    background: var(--grey-1);
     height: 100%;
-    padding-top: 80px;
-    padding-left: 220px;
-}
-
-ul{
     display: flex;
-    padding: 30px 0px;
-    width: 986px;
+    padding-left: 15px;
+    list-style: none;
+    overflow: scroll; 
+    margin-bottom: 38px;
 }
 
-ul li{
-    background: blue;
+li{
+    height: 40px;
     border-radius: 40px;
     list-style: none;
     margin-right: 28px;
-    padding: 5px 10px;
     border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .todos{
+    min-width: 72px;
     background: var(--grey-1);
 }
 
@@ -253,6 +121,7 @@ ul li{
 }
 
 .panificadora{
+    min-width: 170px;
     background: var(--product-2);
 }
 
@@ -263,6 +132,7 @@ ul li{
 }
 
 .frutas{
+    min-width: 107px;
     background: var(--product-3);
 }
 
@@ -273,6 +143,7 @@ ul li{
 }
 
 .bebidas{
+    min-width: 107px;
     background: var(--product-4);
 }
 
@@ -281,24 +152,38 @@ ul li{
     background: var(--grey-1);
     cursor: pointer;
 }
+
+/* MAIN */
 
 .products{
-    width: 986px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    overflow: scroll;
+    margin-left: 15px;
 }
 
 .card{
-    width: 300px;   
-    margin-bottom: 50px;
+    margin-right: 23px;
+    min-width: 300px;
+    height: 359px;
+    margin-bottom: 35px;
 }
 
 .card img{
     width: 300px;
     height: 200px;
-    border: 2px solid var(--color-primary-50);
-    border-radius: 5px;
+    border: 3px solid var(--color-primary-50);
+    border-radius: 8px;
+}
+
+.card li{
+    max-width: 132px;
+    max-height: 30px;
+    padding: 10px;
+    position: relative;
+    margin-top: -28px;
+    margin-left: 14px;
+    background-color: var(--color-primary-50);
+    font-size: 12px;
 }
 
 .card h3{
@@ -309,7 +194,7 @@ ul li{
 .card p{
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 27px;
+    margin-bottom: 10px;
 }
 
 .div-price{
@@ -347,7 +232,8 @@ ul li{
 aside{
     width: 320px;
     height: 467px;
-    margin: 36px 15px 73.89px 18px;
+    margin: 0 auto;
+    margin-bottom: 73px;
 }
 
 .cart{
@@ -398,4 +284,5 @@ aside{
 .cart-body p{
     font-size: 12.82px;
     font-weight: 400;
-}  */
+}
+
