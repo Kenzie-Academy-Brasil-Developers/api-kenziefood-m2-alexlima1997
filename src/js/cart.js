@@ -7,14 +7,26 @@ const cart = class cart{
     const cart = document.querySelector(".cart-body")
     cart.innerHTML = ""
     products.forEach(product=>{
+
     const li = document.createElement('li');
+    li.classList.add('cart-item')
+
     const img = document.createElement('img');
+    img.classList.add('cart-item-img')
+
     const h3 = document.createElement('h3');
+    h3.classList.add('cart-item-name')
+
     const p = document.createElement('p');
+    p.classList.add('cart-item-price')
+
     const span = document.createElement('span');
+    p.classList.add('cart-item-category')
+
     const button = document.createElement('button')
+    button.classList.add('cart-item-removeButton')
 
-
+    
     img.src = product.imagem
     h3.innerText = product.nome;
     p.innerText = this.numberToString(product.preco);
@@ -31,16 +43,23 @@ const cart = class cart{
     })
     
     const div1 = document.createElement('div')
+    div1.classList.add('cart-div-quantity')
+
     const p1 = document.createElement('p');
     const span1 = document.createElement('span');
+
     const div2 = document.createElement('div')
+    div2.classList.add('cart-div-totalPrice')
+
     const p2 = document.createElement('p');
     const span2 = document.createElement('span');
+
     span1.innerText = "Quantidade"
     p1.innerText = products.length
     span2.innerText = "Total"
     let total = this.calculatePrice(products)
     p2.innerText = this.numberToString(total)
+    
     div1.appendChild(span1)
     div1.appendChild(p1)
     cart.appendChild(div1)
