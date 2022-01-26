@@ -8,9 +8,147 @@
     <title>Kenzie Food</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 
 <body>
+    
+    <header>
+        <section>
+            <img src="src/img/logo.svg" alt="">
+            <div class="search-bar">
+                <input class="search-txt" type="text" placeholder="Pesquise por produto">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
+        
+    </header>
+    
+    <main>
+        <section>
+
+            <div class="carrosel-conteiner">
+                <div class="carrosel" id="carrosel">
+                    <div class="slide">
+                        <li id="todos" class="todos">Todos</li>
+                    </div>
+                    <div class="slide">
+                        <li id="panificadora" class="panificadora ">&#x1F956 Panificadora</li>
+                    </div>
+                    <div class="slide">
+                        <li id="frutas" class="frutas">&#x1F34E Frutas</li>
+                    </div>
+                    <div class="slide">
+                        <li id="bebidas" class="bebidas">&#x1F377 Bebidas</li>
+                    </div>
+                </div>
+            </div>
+
+            <button class="left-arrow arrow" id="left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+    
+            <button class="right-arrow arrow" id="right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <ul>
+                <li id="todos" class="todos slide">Todos</li>
+                <li id="panificadora" class="panificadora slide">&#x1F956 Panificadora</li>
+                <li id="frutas" class="frutas slide">&#x1F34E Frutas</li>
+                <li id="bebidas" class="bebidas slide">&#x1F377 Bebidas</li>
+            </ul>
+        </section>
+        <section class="products">
+            <!-- <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                    
+                </div>
+            </article>
+            <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </article>
+            <article class="card">
+                <img src="" alt="">
+                <h3>Panqueca de banana com aveia</h3>
+                <p>Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+                <div class="div-price">
+                    <span class="price">R$ 20,00</span>
+                    <button class="btn-buy">
+                        <i class="fas fa-cart-plus"></i>
+                    </button>
+                </div>
+            </article> -->
+        </section>
+    </main>
+    
+    <!-- <aside>
+        <div class="cart">
+            <i class="fas fa-cart-plus"></i>
+            <h2>Carrinho</h2>
+        </div>
+        <section class="cart-body">
+            <img src="src/img/cart.svg" alt="">
+            <div>
+                <h3>Ops!</h3>
+                <p>Por enquanto não temos produtos no carrinho</p>
+            </div>
+            
+        </section>
+    </aside> -->
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script type="module" src="src/js/index.js"></script>
 </body>
 
 </html>
