@@ -1,6 +1,22 @@
+import {SearchController} from './search.js';
+
 const Main = class Main{
-    constructor(){
-        this._products = [];
+    constructor(products){
+        this._products = products;
+        this._filteredProducts = [];
+        this._input = [];
+    }
+
+    set products(newArray) {
+        this._products = newArray
+    }
+    
+    get products(){
+        return this._products
+    }
+
+    set filteredProducts(newArray) {
+        this._filteredProducts = newArray
     }
 
     async getProducts(){
@@ -8,10 +24,19 @@ const Main = class Main{
         await fetch("https://kenzie-food-api.herokuapp.com/product")
         .then(response => response.json())
         .then(data => {
-            this._products = data
+            
+            this._products = data;
             console.log(this._products)
         })
-        
+ 
+    }
+
+    newInput(newInput) {
+        this._input = newInput
+    }
+
+    cleanFilter(){
+        this._filteredProducts = [];
     }
 
     numberToString(value){
@@ -25,9 +50,15 @@ const Main = class Main{
         return(string)
     }
 
-    productsDom(){
+    searchAction(data){
+        let context = document.getElementsByClassName('search-txt')[0].value
+        this._filteredProducts = SearchController.filter(data, context)
+    }
+
+    productsDom(data){
         let section = document.getElementsByClassName('products')[0]
-        let data = this._products
+        section.innerHTML = "";
+
         data.forEach(product => {
             let card = document.createElement('article')
             let img = document.createElement('img')
@@ -65,7 +96,7 @@ const Main = class Main{
             i.classList.add('fa-cart-plus')
             button.appendChild(i)
         
-            console.log(product)
+            
         });
 
     }
