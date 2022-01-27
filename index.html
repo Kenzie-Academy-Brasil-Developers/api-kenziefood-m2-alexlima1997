@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Food</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body>
+    <header>
+        <section>
+            <img src="src/img/logo.svg" alt="">
+            <div class="search-bar">
+                <input class="search-txt" type="text" placeholder="Pesquise por produto">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>        
+    </header>
+    
+    <main>
+        <section>
+            <ul>
+                <li id="todos" class="todos ">Todos</li>
+                <li id="panificadora" class="panificadora ">&#x1F956 Panificadora</li>
+                <li id="frutas" class="frutas ">&#x1F34E Frutas</li>
+                <li id="bebidas" class="bebidas ">&#x1F377 Bebidas</li>
+            </ul>
+        </section>
+        <section class="products">
+        </section>
+    </main>
+    
+    <aside>
+        <div class="cart">
+            <i class="fas fa-cart-plus"></i>
+            <h2>Carrinho</h2>
+        </div>
+        <section class="cart-body">
+            <section class="cart-empty">
+                <img src="src/img/cart.svg" alt="">
+                <div>
+                    <h3>Ops!</h3>
+                    <p>Por enquanto não temos produtos no carrinho</p>
+                </div>
+            </section>
+           
+        </section>
+        <section class="cart-body-quantity">
+        </section>
+    </aside>
+
+
+    <script type="module" src="src/js/index.js"></script>
+</body>
+
+
+</html>
