@@ -1,4 +1,6 @@
 import {Main} from './main.js';
+import {db} from "./cartDB.js"
+import {cart} from "./cart.js";
 
 let button             = document.getElementsByClassName('search-btn')[0]
 let buttonTodos        = document.getElementById('todos')
@@ -65,3 +67,7 @@ function eventsButtons(){
     contextInput.addEventListener('keyup', activeSearch)
 }
 productsRequest();
+
+if(db.cart.length>0){
+    cart.createCart(db.cart)
+}

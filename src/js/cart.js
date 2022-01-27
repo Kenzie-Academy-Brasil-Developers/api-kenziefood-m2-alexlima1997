@@ -67,12 +67,14 @@ const cart = class cart{
 
     static addCart(product){
     db.cart.push(product)
+    localStorage.setItem("cartArray", JSON.stringify(db.cart))
     this.createCart(db.cart)
 }
 
     static removeCart(product){
     let index = db.cart.indexOf(product)
     db.cart.splice(index,1)
+    localStorage.setItem("cartArray", JSON.stringify(db.cart))
     this.createCart(db.cart)
 }
 
