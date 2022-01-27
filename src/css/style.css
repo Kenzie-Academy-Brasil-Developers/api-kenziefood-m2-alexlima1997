@@ -88,11 +88,12 @@ header img{
 }
 
 ul{
+    width: 380px;
     height: 100%;
     display: flex;
     padding-left: 15px;
     list-style: none;
-    overflow: scroll; 
+    overflow: auto; 
     margin-bottom: 38px;
 }
 
@@ -152,6 +153,7 @@ li{
 }
 
 .products{
+    width: 380px;
     display: flex;
     overflow: scroll;
     margin-left: 15px;
