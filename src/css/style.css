@@ -358,6 +358,29 @@ aside{
     padding: 18px;
 }
 
+@media (min-width: 500px) and (max-width: 768px){
+
+    header section{
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul{
+        width: 100%;
+    }
+
+    .products{
+        width: 768px;
+    }
+
+    aside{
+        margin: auto;
+        padding-top: 30px;
+    }
+}
+
 @media (min-width: 769px){
 
     body{
