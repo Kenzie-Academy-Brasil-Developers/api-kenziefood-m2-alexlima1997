@@ -1,17 +1,39 @@
+import {SearchController} from './search.js';
+import {cart} from "./cart.js";
+
 const Main = class Main{
-    constructor(){
-        this._products = [];
+    constructor(products){
+        this._products = products;
+        this._filteredProducts = [];
+        this._input = [];
+    }
+
+    set products(newArray) {
+        this._products = newArray
+    }
+    
+    get products(){
+        return this._products
+    }
+
+    set filteredProducts(newArray) {
+        this._filteredProducts = newArray
     }
 
     async getProducts(){
 
         await fetch("https://kenzie-food-api.herokuapp.com/product")
         .then(response => response.json())
-        .then(data => {
-            this._products = data
-            console.log(this._products)
-        })
-        
+        .then(data => this._products = data)
+ 
+    }
+
+    newInput(newInput) {
+        this._input = newInput
+    }
+
+    cleanFilter(){
+        this._filteredProducts = [];
     }
 
     numberToString(value){
@@ -25,12 +47,22 @@ const Main = class Main{
         return(string)
     }
 
-    productsDom(){
+    searchName(data, context){
+        this._filteredProducts = SearchController.filterName(data, context)
+    }
+
+    searchType(data, context){
+        this._filteredProducts = SearchController.filterType(data, context)
+    }
+
+    productsDom(data){
         let section = document.getElementsByClassName('products')[0]
-        let data = this._products
+        section.innerHTML = "";
+
         data.forEach(product => {
             let card = document.createElement('article')
             let img = document.createElement('img')
+            let li = document.createElement('li')
             let h3 = document.createElement('h3')
             let p = document.createElement('p')
             let div = document.createElement('div')
@@ -43,6 +75,16 @@ const Main = class Main{
 
             img.src = product.imagem
             card.appendChild(img)
+
+            if(product.categoria === 'Panificadora'){
+                li.innerHTML = `&#x1F956 ${product.categoria}`
+            }else if(product.categoria === 'Frutas'){
+                li.innerHTML = `&#x1F34E ${product.categoria}`
+            }else if(product.categoria === 'Bebidas'){
+                li.innerHTML = `&#x1F377 ${product.categoria}`
+            }
+
+            card.appendChild(li)
 
             h3.innerText = product.nome
             card.appendChild(h3)
@@ -64,8 +106,8 @@ const Main = class Main{
             i.classList.add('fas')
             i.classList.add('fa-cart-plus')
             button.appendChild(i)
-        
-            console.log(product)
+            button.addEventListener("click", () => cart.addCart(product))
+            
         });
 
     }
