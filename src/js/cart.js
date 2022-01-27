@@ -63,6 +63,25 @@ const cart = class cart{
     div2.appendChild(span2)
     div2.appendChild(p2)
     cartQtd.appendChild(div2)
+
+    if(db.cart.length === 0){
+        cartQtd.innerHTML = "";
+        cart.style.backgroundColor = 'var(--grey-2)';
+        const section = document.createElement('section');
+        const img = document.createElement('img');
+        const div = document.createElement('div');
+        const h3 = document.createElement('h3');
+        const p = document.createElement('p')
+        section.classList.add('cart-empty');
+        img.src = 'src/img/cart.svg';
+        h3.innerHTML = 'Ops!';
+        p.innerText = 'Por enquanto não temos produtos no carrinho';
+        section.appendChild(img);
+        div.appendChild(h3);
+        div.appendChild(p);
+        section.appendChild(div);
+        cart.appendChild(section);        
+    }
 }
 
     static addCart(product){
