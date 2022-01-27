@@ -1,4 +1,5 @@
 import {SearchController} from './search.js';
+import {cart} from "./cart.js";
 
 const Main = class Main{
     constructor(products){
@@ -94,7 +95,7 @@ const Main = class Main{
             i.classList.add('fas')
             i.classList.add('fa-cart-plus')
             button.appendChild(i)
-        
+            button.addEventListener("click", () => cart.addCart(product))
             
         });
 
