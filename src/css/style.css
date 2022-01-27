@@ -172,6 +172,11 @@ li{
     border-radius: 8px;
 }
 
+.card:hover img{
+    border: 3px solid var(--color-primary);
+    cursor: pointer;
+}
+
 .card li{
     max-width: 132px;
     max-height: 30px;
