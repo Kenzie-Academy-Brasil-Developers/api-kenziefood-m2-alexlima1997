@@ -62,6 +62,7 @@ const Main = class Main{
         data.forEach(product => {
             let card = document.createElement('article')
             let img = document.createElement('img')
+            let li = document.createElement('li')
             let h3 = document.createElement('h3')
             let p = document.createElement('p')
             let div = document.createElement('div')
@@ -74,6 +75,16 @@ const Main = class Main{
 
             img.src = product.imagem
             card.appendChild(img)
+
+            if(product.categoria === 'Panificadora'){
+                li.innerHTML = `&#x1F956 ${product.categoria}`
+            }else if(product.categoria === 'Frutas'){
+                li.innerHTML = `&#x1F34E ${product.categoria}`
+            }else if(product.categoria === 'Bebidas'){
+                li.innerHTML = `&#x1F377 ${product.categoria}`
+            }
+
+            card.appendChild(li)
 
             h3.innerText = product.nome
             card.appendChild(h3)
